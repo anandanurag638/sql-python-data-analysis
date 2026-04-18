@@ -25,6 +25,50 @@ INNER JOIN employee_salary sal
 	ON dem.employee_id = sal.employee_id
 JOIN parks_departments dept
 	ON dept.department_id = sal.dept_id; 
+    select age,gender
+    from employee_demographics
+    union
+    select first_name,last_name
+    from employee_salary;
+    
+    
+    select *,
+		case
+          when age > 50 then "old"
+            else "young"
+          end as age_label
+          from employee_demographics;
+          
+          
+select first_name,last_name, "old" as label 
+from employee_demographics 
+where age > 55
+union 
+select first_name,last_name,  "highly paid" as label 
+from employee_salary
+where salary > 70000;
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
