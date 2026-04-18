@@ -47,25 +47,25 @@ union
 select first_name,last_name,  "highly paid" as label 
 from employee_salary
 where salary > 70000;
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
+select first_name, length(first_name)
+from employee_demographics; 
+select first_name,upper(first_name),lower(first_name)
+from  employee_demographics;
+select rtrim("            gfs        ");
+select ltrim(" ssd   ");
+select first_name,left (first_name, 3)
+from employee_demographics;
+select first_name,left (first_name, 3)
+from employee_salary;
+select first_name,right (first_name, 3)
+from employee_demographics;
+select first_name,  replace(first_name, "e","x")
+from employee_salary;
+select first_name,locate("e", first_name)
+from employee_demographics;
+select first_name,last_name, 
+concat(first_name, " ",last_name)
+from employee_salary;
 
 
 
