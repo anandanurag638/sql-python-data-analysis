@@ -66,9 +66,34 @@ from employee_demographics;
 select first_name,last_name, 
 concat(first_name, " ",last_name)
 from employee_salary;
+select first_name,last_name,salary,
+case 
+when salary > 50000 then "highiy paid" 
+else "not highly paid" 
 
-
-
+end as salary_label
+from employee_salary;
+select first_name,last_name,age,gender,
+case 
+when age <34 then "young"
+else "not young"
+end as age_label
+from employee_demographics;
+show tables ;
+SHOW TABLES FROM parks_and_recreation;
+select * from parks_and_recreation.parks_departments;
+select * from employee_demographics
+where employee_id IN 
+						( select employee_id
+                        from employee_salary
+                        where dept_id = 1);
+select salary,
+concat( first_name," ", last_name), 
+( select  AVG(salary) from employee_salary)
+from employee_salary ;
+select gender, min(age),max(age),avg(age),count(gender)
+from employee_demographics
+group by gender;
 
 
 
